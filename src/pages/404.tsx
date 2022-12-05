@@ -9,23 +9,10 @@ import {
   Flex,
 } from "@mantine/core";
 import { Link } from "react-router-dom";
-
+import Logo404 from "../assets/404.svg";
 const useStyles = createStyles((theme) => ({
   root: {
     minHeight: "100vh",
-  },
-
-  label: {
-    textAlign: "center",
-    fontWeight: 900,
-    fontSize: 220,
-    lineHeight: 1,
-    marginBottom: theme.spacing.xl * 1.5,
-    color: theme.colors.dark[2],
-
-    [theme.fn.smallerThan("sm")]: {
-      fontSize: 120,
-    },
   },
 
   title: {
@@ -33,7 +20,8 @@ const useStyles = createStyles((theme) => ({
     textAlign: "center",
     fontWeight: 900,
     fontSize: 38,
-
+    color: "#fcafea",
+    marginTop: theme.spacing.lg,
     [theme.fn.smallerThan("sm")]: {
       fontSize: 32,
     },
@@ -42,18 +30,19 @@ const useStyles = createStyles((theme) => ({
   description: {
     maxWidth: 500,
     margin: "auto",
-    marginTop: theme.spacing.xl,
-    marginBottom: theme.spacing.xl * 1.5,
+    marginTop: theme.spacing.lg,
+    marginBottom: theme.spacing.lg * 1.5,
   },
 }));
 
 export default function NotFounPage() {
   const { classes } = useStyles();
-  const url404 =
-    "https://img.freepik.com/free-vector/oops-404-error-with-broken-robot-concept-illustration_114360-1932.jpg?w=740&t=st=1670212868~exp=1670213468~hmac=accfa9b72ffbe55c8b43f5ea33742581bb62702ea8c8e023fccee5845146b8f7";
   return (
-    <Flex justify="space-around" align="center" className={classes.root}>
-      <div>
+    <Flex align="center" justify="center" className={classes.root}>
+      <Container>
+        <Group position="center">
+          <Image src={Logo404} alt="404" width={404} />
+        </Group>
         <Title className={classes.title}>OOPS!</Title>
         <Text
           color="dimmed"
@@ -71,8 +60,7 @@ export default function NotFounPage() {
             </Button>
           </Link>
         </Group>
-      </div>
-      <Image src={url404} alt="404" width={500} />
+      </Container>
     </Flex>
   );
 }
