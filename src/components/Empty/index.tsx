@@ -1,12 +1,12 @@
-import React from "react";
-import { Center, Container, Flex, Group, Image, Text } from "@mantine/core";
-import EmptyLogo from "../../assets/not-search.svg";
+import React from 'react'
+import { Center, Container, Flex, Group, Image, Text } from '@mantine/core'
+import EmptyLogo from '../../assets/not-search.svg'
 interface EmptyDivProps {
-  label?: string | boolean;
+  label?: string | boolean
 }
 
 function Empty(props: EmptyDivProps) {
-  const label: string | boolean = props.label || "No data";
+  const label: string | boolean = props.label || 'No data'
 
   return (
     <Container>
@@ -21,7 +21,7 @@ function Empty(props: EmptyDivProps) {
         )}
       </Group>
     </Container>
-  );
+  )
 }
 
-export default Empty;
+export default Empty
